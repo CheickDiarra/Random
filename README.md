@@ -25,7 +25,7 @@ The default port can be overriden with
     http://<hostname:port>/random
     
 ###Specify more than one result
-This will 10 random generated data
+This will create 10 random generated data
 
     http://<hostname:port>/random?count=10
 

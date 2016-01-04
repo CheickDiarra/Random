@@ -16,4 +16,30 @@ router.get('/random', function(req , res) {
   });
 });
 
+router.get('/postman' , function(req , res) {
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+  var params = req.query;
+  console.log(params);
+  var options = {
+    host : params.hostname,
+    path : params.path,
+    method : 'GET'
+  }
+
+  var req = https.request(options, function(res) {
+  console.log("statusCode: ", res.statusCode);
+  console.log("headers: ", res.headers);
+
+  res.on('data', function(d) {
+    process.stdout.write(d);
+  });
+  });
+  req.end();
+
+  req.on('error', function(e) {
+    console.error(e);
+  });
+  res.status(200).end();
+});
+
 module.exports = router;

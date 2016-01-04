@@ -35,6 +35,7 @@ person_generator = (options) => {
     _.first = luck.first({ gender : _.gender });
     _.last = luck.last();
     _.name = { first : _.first , last : _.last };
+    _.email = _.first + '.' + _.last + '@mail.com';
     return _;
   }
 };

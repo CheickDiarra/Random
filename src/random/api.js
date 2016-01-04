@@ -11,7 +11,7 @@ people = (options) => {
     let people = STREAM.generate(someone)
                        .limit(rows)
                        .toArray();
-    resolve(people);
+    resolve({ results : people});
   });
 
 },

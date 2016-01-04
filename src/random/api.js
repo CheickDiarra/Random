@@ -34,6 +34,7 @@ person_generator = (options) => {
     _.ssn = luck.ssn({ dashes: false });
     _.first = luck.first({ gender : _.gender });
     _.last = luck.last();
+    _.name = { first : _.first , last : _.last };
     return _;
   }
 };
